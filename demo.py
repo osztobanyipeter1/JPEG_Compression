@@ -43,12 +43,12 @@ def save_compressed_data(compressed_data, output_path):
 
 def main():
     # Initialize compressor with quality (1-100)
-    quality = 75
+    quality = 1
     compressor = JPEGCompressor(quality=quality)
     
     # Path to your test image
     image_path = "input/blackandwhite4000x2800.jpg"
-    compressed_path = "compressed/compressed_blackandwhitebig(q=75).jpec"
+    compressed_path = "compressed/compressed_blackandwhitesbig(q=1).jpec"
     
     # Get original file size
     original_size = get_file_size(image_path)
@@ -79,7 +79,7 @@ def main():
     
 
     # Save the reconstructed image
-    output_path = "decompressed/decompressed_blackandwhitebig(q=75).jpg"
+    output_path = "decompressed/decompressed_blackandwhitesbig(q=1).jpg"
     imageio.imwrite(output_path, decompressed_array.astype('uint8'))
     print(f"\nDecompressed image saved to {output_path}")
     print(f"\nDecompressed image size: {get_file_size(output_path):,} bytes")

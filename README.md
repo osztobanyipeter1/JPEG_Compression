@@ -14,6 +14,8 @@
 9. Huffman Encoding
 10. Bitstream writing
 
+Then you have a compressed .jpec file
+
 ## Decoding process:
 1. Bitstream Parsing (Huffman decode)
 2. Block Reconstruction:
@@ -23,6 +25,8 @@
 6. Chroma Upsampling
 7. Color Space Conversion
 8. Postprocessing
+
+Then you will have the decompressed .jpg file
 
 ## Project files:
 1. Utils.py
