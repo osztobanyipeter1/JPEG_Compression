@@ -47,8 +47,8 @@ def main():
     compressor = JPEGCompressor(quality=quality)
     
     # Path to your test image
-    image_path = "input/bird4000x6000.jpg"
-    compressed_path = "compressed/compressed_birdbig.jpec"
+    image_path = "input/blackandwhite4000x2800.jpg"
+    compressed_path = "compressed/compressed_blackandwhitebig(q=75).jpec"
     
     # Get original file size
     original_size = get_file_size(image_path)
@@ -79,10 +79,11 @@ def main():
     
 
     # Save the reconstructed image
-    output_path = "decompressed/decompressed_birdbig.jpg"
+    output_path = "decompressed/decompressed_blackandwhitebig(q=75).jpg"
     imageio.imwrite(output_path, decompressed_array.astype('uint8'))
     print(f"\nDecompressed image saved to {output_path}")
-    
+    print(f"\nDecompressed image size: {get_file_size(output_path):,} bytes")
+
     # Calculate PSNR
     psnr = compressor.calculate_psnr(original_array, decompressed_array)
     print(f"\nQuality metrics:")
